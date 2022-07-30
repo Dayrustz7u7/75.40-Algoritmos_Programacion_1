@@ -1,4 +1,4 @@
-# TP Segunda Parte: La Sombra de Mac 🕹️​
+# TP Segunda Parte: La Sombra de Mac 👾​🕹️​
 ## 1) Introduccion 📑​
    **Mac** es un niño de ocho años con gran inteligencia y creatividad. Él es una persona sensata y moral, y puede ser
    a través de Bloo, su amigo imaginario, que hace y dice todas las cosas que quiere pero no puede. Por lo tanto, Bloo
@@ -69,7 +69,7 @@
         - **📐​ Escaleras:** Se posicionarán sobre las paredes. Tienen un solo uso, por lo que al usarla deberá desaparecer y
                poner una pared en su lugar. Permitirán a los personajes saltarse una posición.
                
-        - **💲 Monedas:** Al agarrar una moneda, le dará puntos al personaje. Los puntos seran un número aleatorio entre 10
+        - **💲​ Monedas:** Al agarrar una moneda, le dará puntos al personaje. Los puntos seran un número aleatorio entre 10
                y 20, ambos inclusive.
                
         - **❤️ Vidas:** El personaje puede elegir intercambiar 200 puntos por una vida al apretar la letra ’V’. Como máximo,
@@ -100,7 +100,7 @@
            - **🌌 Portales:** 0
         - **Cantidad herramientas:**
           - **📐​ Escaleras:** 10
-          - **💲 Monedas:** 10
+          - **💲​ Monedas:** 10
           - **🔑 Llave:** 0
         ### **Nivel 2** 🟡
         - **Cantidad obstáculos:**
@@ -110,7 +110,7 @@
           - **🌌 Portales:** 2
         - **Cantidad herramientas:**
           - **📐​ Escaleras:** 15
-          - **💲 Monedas:** 15
+          - **💲​ Monedas:** 15
           - **🔑 Llave:** 1
         ### **Nivel 3** 🔴​
         - **Cantidad obstáculos:**
@@ -120,10 +120,10 @@
           - **🌌 Portales:** 4
         - **Cantidad herramientas:**
           - **📐​ Escaleras:** 15
-          - **💲 Monedas:** 15
+          - **💲​ Monedas:** 15
           - **🔑 Llave:** 1
                
-## 4) Especificaciones 
+## 4) Especificaciones ​📖
    Como buenos amigos, vamos a ayudar a Mac y Bloo a cumplir su objetivo de volver a la mansión. Para poder
    lograr esto, se pedirá implementar algunas funciones y procedimientos.
    - ## **4.1) Funciones y procedimientos**
@@ -227,28 +227,28 @@
         **Observación:** Queda a critero del alumno/a el hacer o no, más funciones y/o procedimientos para resolver los
            problemas presentados. No se permite agregar dichas firmas al .h. Algunas funciones y procedimientos, ya no se
            encuetran más en la_sombra_de_mac.h debido a que ahora pasarán a ser privadas.
-   - ## **4.2) Convenciones**
+   - ## **4.2) Convenciones** 📝​
         Se deberá utilizar la siguiente convención para los obstáculos y herramientas:
         
-        - Puerta: D.
-        - Escaleras: E.
-        - Llave: L.
-        - Monedas: C.
-        - Pozos: W.
-        - Interruptores: O.
-        - Portales: P.
-        - Velas: V.
+        - 🚪 Puerta: **D**.
+        - ​📐​Escaleras: **E**.
+        - 🔑 Llave: **L**.
+        - 💲​ Monedas: **C**.
+        - 🕳️ Pozos: **W**.
+        - 🖲️ Interruptores: **O**.
+        - 🌌 Portales: **P**.
+        - 🕯️ Velas: **V**.
         
         Y para los personajes:
         
-        -  Mac: M.
-        -  Bloo: B.
+        - 🧍‍♂️​ Mac: **M**.
+        - 👻 Bloo: **B**.
    
-## 5) Resultado Esperado
+## 5) Resultado Esperado 📊
    Se espera que el trabajo creado cumpla con las buenas prácticas de programación y todas las funciones y procedimientos
    pedidos funcionen acorde a lo solicitado, respetando las pre y post condiciones propuestas.
 
-## 6) Compilacion y Entrega
+## 6) Compilacion y Entrega 👨‍💻
    El trabajo práctico debe ser realizado en un archivo llamado la_sombra_de_mac.c, lo que sería la implementación
    de la biblioteca la_sombra_de_mac.h. El objetivo es que sea compilado sin errores al correr desde la terminal el
    comando:
@@ -271,7 +271,7 @@
    prácticas de programación.
 
 ## 7) Anexos
-   - ## **7.1) Obtención de números aleatorios**
+   - ## **7.1) Obtención de números aleatorios** 🎲​
         Para obtener números aleatorios debe utilizarse la función rand(), la cual está disponible en la biblioteca stdlib.h.
         
         Esta función devuelve números pseudo-aleatorios, esto quiere decir que, cuando uno ejecuta nuevamente el programa,
@@ -298,7 +298,7 @@
                 return 0;
          }
         ```
-   - ## **7.2) Distancia Manhattan**
+   - ## **7.2) Distancia Manhattan** 🌫️
         Para obtener la distancia entre 2 puntos mediante este método, se debe conocer a priori las coordenadas de dichos
         puntos.
 
@@ -309,7 +309,7 @@
         - La distancia entre los puntos (10,5) y (2,12) es 15 ya que: j10 - 2j + j5 - 12j = 8 + 7 = 15
         - La distancia entre los puntos (7,8) y (9,8) es 2 ya que: j7 - 9j + j8 - 8j = 2 + 0 = 2
         
-   - ## **7.3) Limpiar la pantalla durante la ejecución de un programa**
+   - ## **7.3) Limpiar la pantalla durante la ejecución de un programa** ​🧹​
         Muchas veces nos gustaría que nuestro programa pueda verse siempre en la pantalla sin ver texto anterior.
         
         Para ésto, podemos utilizar la llamada al sistema clear, de esta manera, limpiaremos todo lo que hay en nuestra
