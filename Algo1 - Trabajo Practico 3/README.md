@@ -32,125 +32,135 @@
    volver a la mansión. Para esto se usará una estructura del tipo partida_t, la cual se especificará más adelante.
    
    Podrás ayudarlos una vez más?
-   - ## **3.1) Obstáculos** 🧱​
-        Los obstáculos son elementos que estarán en cualquier posición del mapa e intentarán matar o distraer a los
-        personajes.
-        
-        - **🕯️​ Velas:** Dejarán sin vida a la sombra, dejándola inmóvil, por lo que el personaje deberá ir a apagar la vela, y luego
-               revivir a Bloo. El rango de su efecto será de una matriz de 3x3, ubicandose la vela en el centro. Descontarán
-               50 puntos al personaje, cada vez que este la reviva.
-        
-        - **🕳️ Pozos:** Quitarán una vida al personaje en caso de que éste pise uno. Al morir, ambos personajes vuelven a
-               iniciar de 0, es decir, Mac en una coordenada random, y Bloo en una posición dependiente del personaje.
-               
-        - **🖲️ Interruptor:** Si Mac pisa un interruptor, lo activará e intercambiará la forma en que se mueve su sombra. Si
-               interruptor_apretado es false, Bloo caminará en sentido espejo. En caso contrario, si es true, caminará en el
-               mismo sentido.
-               
-        - **🌌 Portales:** Si Bloo pisa un portal, las posiciones de los personajes serán intercambiadas, por lo que Bloo quedará
-               en la posición de Mac, y Mac en la de Bloo.
-               
-        Todos los obstáculos empezarán en posiciones aleatorias. Cabe destacar que no pueden posicionarse distintos
-        obstáculos en la misma posición que otro objeto, o personaje.
-        El orden de posicionamiento de los obstáculos al inicializar el nivel es indiferente, siempre y cuando se respete lo
-        enunciado en el párrafo anterior.
-        Cuando Mac apague una vela, se requiere que la vela sea eliminada del vector y no se muestre más en el terreno.
-   - ## **3.2) Herramientas 🛠️**
-        Las herramientas son elementos que ayudarán a Mac y a Bloo a volver a la mansión.
-        
-        - **📐​ Escaleras:** Se posicionarán sobre las paredes. Tienen un solo uso, por lo que al usarla deberá desaparecer y
-               poner una pared en su lugar. Permitirán a los personajes saltarse una posición.
-               
-        - **💲​ Monedas:** Al agarrar una moneda, le dará puntos al personaje. Los puntos seran un número aleatorio entre 10
-               y 20, ambos inclusive.
-               
-        - **❤️ Vidas:** El personaje puede elegir intercambiar 200 puntos por una vida al apretar la letra ’V’. Como máximo,
-               el personaje puede contar con 3 vidas al mismo tiempo.
-  
-        - **🔑 Llave:** Sólo puede ser agarrada por Mac. Le permitirá a ambos personajes terminar el nivel, al pasar por la
-               puerta de la mansión.
-        
-        El hecho de agarrar cualquiera de estos objetos, con excepción de las vidas, está dado por pararse en la posición
-        en la que se encuentra la herramienta.
-        Las herramientas deben posicionarse aleatoriamente al inicializar el juego, cabe destacar que no pueden posicionarse
-        distintas herramientas en la misma posición o en una posición donde ya existe un obstáculo, o la posición de
-        uno de los dos personajes.
-        El orden de posicionamiento de las herramientas al inicializar el juego es indiferente, siempre y cuando se respete
-        lo enunciado en el párrafo anterior.
-        El agarrar una moneda o una llave, o el uso de la escalera, requerirá que se elimine del vector de herramientas.
-        
-   - ## **3.3) Niveles** 🎰​
-        Habrá 3 niveles a lo largo de todo el juego. Para pasar cada uno, Mac deberá contar con la llave y ambos
-        personajes deberán estar a una distancia manhattan menor a uno, de la puerta. En cada nivel habrá distinta cantidad
-        de herramientas y obstáculos.
-        
-        ### **Nivel 1** 🟢
-        - **Cantidad obstáculos:**
-           - **🕯️​ Velas:** 5
-           - **🕳️ Pozos:** 15
-           - **🖲️ Interruptores:** 1
-           - **🌌 Portales:** 0
-        - **Cantidad herramientas:**
-          - **📐​ Escaleras:** 10
-          - **💲​ Monedas:** 10
-          - **🔑 Llave:** 0
-        ### **Nivel 2** 🟡
-        - **Cantidad obstáculos:**
-          - **🕯️​ Velas:** 10
-          - **🕳️ Pozos:** 20
-          - **🖲️ Interruptores:** 2
-          - **🌌 Portales:** 2
-        - **Cantidad herramientas:**
-          - **📐​ Escaleras:** 15
-          - **💲​ Monedas:** 15
-          - **🔑 Llave:** 1
-        ### **Nivel 3** 🔴​
-        - **Cantidad obstáculos:**
-          - **🕯️​ Velas:** 12
-          - **🕳️ Pozos:** 30
-          - **🖲️ Interruptores:** 4
-          - **🌌 Portales:** 4
-        - **Cantidad herramientas:**
-          - **📐​ Escaleras:** 15
-          - **💲​ Monedas:** 15
-          - **🔑 Llave:** 1
-               
 ## 4) Especificaciones ​📖
    Nos manejaremos con una única estructura, partida_t, la cual es:
    - ## **4.1) Estructuras**
         Nos manejaremos con una única estructura, partida_t, la cual es:
         ```c
         #include <stdbool.h>
-2
-3 #define MAX_NOMBRE 100
-4
-5 typedef struct partida {
-6 char jugador[MAX_NOMBRE];
-7 int nivel_llegado;
-8 int puntos;
-9 int vidas restantes;
-10 bool gano;
-11 } partida_t;
+       
+        #define MAX_NOMBRE 100
+       
+        typedef struct partida {
+            char jugador[MAX_NOMBRE];
+            int nivel_llegado;
+            int puntos;
+            int vidas restantes;
+            bool gano;
+        } partida_t;
         ```
-        **Observación:** Queda a critero del alumno/a el hacer o no, más funciones y/o procedimientos para resolver los
-           problemas presentados. No se permite agregar dichas firmas al .h. Algunas funciones y procedimientos, ya no se
-           encuetran más en la_sombra_de_mac.h debido a que ahora pasarán a ser privadas.
    - ## **4.2) Convenciones** 📝​
-        Se deberá utilizar la siguiente convención para los obstáculos y herramientas:
+        Todos los archivos con los que se van a trabajar tendrán el mismo formato. Cada partida está representada en
+        una línea del archivo de la forma:
+        ```c
+        Diego ;3;10;2;Si
+        Juan carlos ;3;26;0;No
+        Marta ;2;15;0;No
+        Mirtha ;3;10;3;Si
+        ```
+        Observar que el campo booleano de la estructura en el archivo csv se representa como un string, se deberá manipular
+        este último para definir el valor del booleano.
+   - ## **4.3) Funcionalidades**
+        - ## **Agregar Partida**
+           Dado un archivo csv de partidas ordenado por nombre alfabéticamente, agregar una partida manteniendo el orden
+           pre establecido.
+           
+           **Ejemplo:** Si se tiene el archivo.
+            ```c
+            Diego ;3;10;2;Si
+            Juan carlos ;3;26;0;No
+            Marta ;2;15;0;No
+            Mirtha ;3;10;3;Si
+            ```
+            Y se quiere agregar una partida que tenga la forma:
+            ```c
+            Lionel ;1;0;0;No
+            ```
+            El archivo deberá quedar:
+            ```c
+            Diego ;3;10;2;Si
+            Juan carlos ;3;26;0;No
+            Lionel ;1;0;0;No
+            Marta ;2;15;0;No
+            Mirtha ;3;10;3;Si
+            ```
+            Este comando se ejecutará de la forma:
+            ```c
+            ./mansion_foster agregar_partida <<nombre_archivo >>
+            ```
+            Donde «nombre_archivo» representa el nombre del archivo al cual se ingresará la partida.
+            
+            **Observación:** La información de la partida la ingresará por entrada estándar (a traves de scanfs) el usuario, y ahí
+            se agregará al archivo ordenadamente.
         
-        - 🚪 Puerta: **D**.
-        - ​📐​Escaleras: **E**.
-        - 🔑 Llave: **L**.
-        - 💲​ Monedas: **C**.
-        - 🕳️ Pozos: **W**.
-        - 🖲️ Interruptores: **O**.
-        - 🌌 Portales: **P**.
-        - 🕯️ Velas: **V**.
-        
-        Y para los personajes:
-        
-        - 🧍‍♂️​ Mac: **M**.
-        - 👻 Bloo: **B**.
+        - ## **Eliminar Partida**
+           Dado un archivo csv de partidas ordenado por nombre alfabéticamente, eliminar una partida mantiendo el orden
+           pre establecido.
+           
+           **Ejemplo:** Si se tiene el archivo
+            ```c
+            Diego ;3;10;2;Si
+            Juan carlos ;3;26;0;No
+            Marta ;2;15;0;No
+            Mirtha ;3;10;3;Si
+            ```
+            Y se quiere eliminar una partida que el jugador tenga el nombre: **Marta**.
+            
+            El archivo deberá quedar:
+            ```c
+            Diego ;3;10;2;Si
+            Juan carlos ;3;26;0;No
+            Mirtha ;3;10;3;Si
+            ```
+            Este comando se correrá de la forma:
+            ```c
+            ./mansion_foster eliminar_partida <<nombre_archivo >> <<nombre_jugador >>
+            ```
+            Donde «nombre_archivo» representa el nombre del archivo donde se eliminará la partida. Y «nombre_jugador»
+            será el argumento por el cual se buscará la partida que será eliminada. Si hay más de una partida con el mismo
+            «nombre_jugador» se eliminará la primera que se encuentre.
+            
+        - ## **Ordenar Partidas**
+           Dado un archivo csv de partidas, se pide ordenarlo alfabéticamente por nombre. Aclaración: Se puede suponer
+           que el archivo entra en memoria.
+
+           Este comando se correrá de la forma:
+           ```c
+           ./mansion_foster ordenar_partidas <<nombre_archivo >>
+           ```
+           Donde «nombre_archivo» representa el nombre del archivo se ordenará.
+           
+        - ## **Configuraciones**
+           Dado un archivo con ciertas configuraciones llamado config.txt, leerlo y aplicar las configuraciones determinadas
+           para el juego.
+           
+           Las configuraciones que podrán aparecer en el archivo son:
+           - Pozos
+           - Velas
+           - Interruptores
+           - Portales
+           - Monedas
+           - Escaleras
+           - Llaves
+           Y el formato será: N«numero_nivel»_«elemento»=«cantidad». Todo escrito en mayúsculas.
+           **Ejemplo:**
+           ```c
+            N1_POZOS =20
+            N1_VELAS =15
+            ...
+            N2_POZOS =10
+            ...
+            N3_POZOS =50
+            ...
+           ```
+           **Aclaraciones:** En caso de no existir el archivo, se jugará con las condiciones normales del juego.
+           Es de suma importancia remarcar que las configuraciones pueden venir en distinto órden, por lo que se deberá
+           verificar la configuración que se esté leyendo.
+         
+           Este comando se correrá de la forma:
+           ```c
+           1 ./mansion_foster config_juego
+           ```
    
 ## 5) Resultado Esperado 📊
    Se espera que el trabajo creado cumpla con las buenas prácticas de programación y todas las funciones y procedimientos
