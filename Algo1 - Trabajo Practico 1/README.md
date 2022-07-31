@@ -1,4 +1,4 @@
-# TP Segunda Parte: La Sombra de Mac 👾​🕹️​
+# TP Primera Parte: Funciones - La Sombra de Mac 👾​🕹️​
 ## 1) Introduccion 📑​
    **Mac** es un niño de ocho años con gran inteligencia y creatividad. Él es una persona sensata y moral, y puede ser
    a través de Bloo, su amigo imaginario, que hace y dice todas las cosas que quiere pero no puede. Por lo tanto, Bloo
