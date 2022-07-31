@@ -18,7 +18,7 @@ respectivo enunciado y van aumentando la **dificultad** a medida que se va avanz
 Los trabajos practicós que realice en esta cursada son escalables, es decir, dependen del Tp anterior y aumenta la *dificultad*
 agregando mas funciones o mejoras. Estos Tps consistieron en:
 
-- TP1 : Introduccion al Lenguaje C y realizacion de funciones basicas que nos serviran para el proximo TP2.
+- [TP1](https://github.com/Dayrustz7u7/75.40-Algoritmos_Programacion_1/tree/master/Algo1%20-%20Trabajo%20Practico%201) : Introduccion al Lenguaje C y realizacion de funciones basicas que nos serviran para el proximo TP2.
 - [TP2](https://github.com/Dayrustz7u7/75.40-Algoritmos_Programacion_1/tree/master/Algo1%20-%20Trabajo%20Practico%202) : Desarrollo y funcionamiento del Juego "La Sombra de Mac". Aqui se evalua el correcto uso de las "Estructuras de Control",
 moduralizacion, buenas practicas de programacion, validacion de datos ingresados por el usuario y tipos de datos simples-estructurados.
 - [TP3](https://github.com/Dayrustz7u7/75.40-Algoritmos_Programacion_1/tree/master/Algo1%20-%20Trabajo%20Practico%203) : Se implementa el uso correcto de "Manejo de archivos en C" en el juego "La Sombra de Mac" como tambien lectura de lineas
